@@ -1,6 +1,6 @@
 ## ith.Variant
 
-Pipeline for calling somatic variants from multi-sampled genomic sequencing data of tumor specimen. This repository extends our old pipeline VAP (https://github.com/cancersysbio/VAP).
+Pipeline for calling somatic variants from multi-sampled genomic sequencing data of tumor specimen. This repository extends the deprecated pipeline VAP (https://github.com/cancersysbio/VAP).
 
 
 # Key functions:
@@ -48,9 +48,7 @@ Contact Author
 ---
 Sun Ruping
 
-If you are willing to receive updates and notice, send an email to ruping@stanford.edu.
-
 Current Affiliation:
-Curtis Lab, Department of Genetics and Medicine, Stanford University. CA, USA.
+Department of Laboratory Medicine and Pathology, University of Minnesota, MN, USA.
 
-Email: ruping@stanford.edu or regularhand@gmail.com
+Email: ruping@umn.edu
