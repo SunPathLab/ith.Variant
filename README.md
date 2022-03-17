@@ -43,6 +43,13 @@ ith.Variant can be run with UNIX command-line interface.
         $ perl ith.Variant/bin/DTrace.pl -h (or --help)
 
 
+ith.Variant provides example scripts for running the pipeline in the Slurm job queueing system.
+
+**Getting help message for submitting jobs in Slurm**
+
+        $ perl ith.Variant/pipeline/submit_slurm.pl -h (or --help)
+
+
 Pre-compiled annotation files (hg38)
 
 
