@@ -36,11 +36,14 @@ The binaries will be built at bin/. ``xxx_directory`` is where lib/ and include/
 Usage
 ---
 
-VAP can be run with UNIX command-line interface.
+ith.Variant can be run with UNIX command-line interface.
 
 **Getting help message**
 
-        $ perl VAP/bin/DTrace.pl -h (or --help)
+        $ perl ith.Variant/bin/DTrace.pl -h (or --help)
+
+
+Pre-compiled annotation files (hg38)
 
 
 
