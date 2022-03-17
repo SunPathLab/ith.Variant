@@ -1,4 +1,4 @@
-## ith.Variant
+# ith.Variant  ![ith.Variant][badge_ithVariant]
 
 Pipeline for calling somatic variants from multi-sampled genomic sequencing data of tumor specimen. This repository extends the deprecated pipeline VAP (https://github.com/cancersysbio/VAP).
 
@@ -52,3 +52,5 @@ Current Affiliation:
 Department of Laboratory Medicine and Pathology, University of Minnesota, MN, USA.
 
 Email: ruping@umn.edu
+
+[badge_ithVariant]:      assets/badges/badge_ith.Variant.svg
