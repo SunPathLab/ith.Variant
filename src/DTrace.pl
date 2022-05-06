@@ -8,7 +8,7 @@ use File::Basename;
 use FindBin qw($RealBin);
 use Parallel::ForkManager;
 use Statistics::Basic qw(:all);
-use lib "$RealBin/lib";
+use lib "$RealBin/../lib";
 use bwaMapping;
 use snvCalling;
 use cnaCalling;
