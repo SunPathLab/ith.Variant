@@ -58,5 +58,5 @@ THREADS=1
 JAVATMP="/home/ruping/shared/tmp/"
 
 #do CNA analysis, for each tumor sample
-perl $TOOLP/seqare/DTrace.pl --configure $CONFIG --runlevel 5 --sampleName $SAMPLE --seqType paired-end,WXS --root $ROOT --threads $THREADS --plpTitan 2 --plpeTitan TRUE --ncTitan 0.5 --ncmTitan map --somaticInfo $SOMATICINFO 2>>$ROOT/$SAMPLE.run.log.cna
+perl $TOOLP/seqare/DTrace.pl --configure $CONFIG --runlevel 5 --sampleName $SAMPLE --seqType paired-end,WXS --root $ROOT --threads $THREADS --plpTitan 3 --plpeTitan TRUE --ncTitan 0.5 --ncmTitan map --somaticInfo $SOMATICINFO 2>>$ROOT/$SAMPLE.run.log.cna
 
