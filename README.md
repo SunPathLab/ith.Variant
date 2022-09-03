@@ -14,6 +14,15 @@ Learn More
 Tumor Multi Region Sequencing (MRS) is becoming a valuable resource for inspecting intra tumor heterogeneity reflecting growth dynamics in the expansion after tumor initiation. However, such information is buried in subclonal variants which can be at low frequency even if the tumor sample is relatively pure. Detection of these events can be further complicated by the uneven read depth of coverage due to variable exome capture efficiency, sampling or amplification bias in the current WES experiments, and copy number changes in different genomic segments. Here we extract mapping features surrounding each genomic coordinates of interest, leveraging information across MRS, to  strike a balance in the sensitivity and accuracy of the variant detection.
 
 
+Install using Conda
+---
+Make sure you've conda or minionda pre installed and run the following commands to install required packages.
+
+```shell
+git clone https://github.com/SunPathLab/ith.Variant.git && cd ith.Variant
+sh install_conda_env.sh
+```
+
 Dependencies and Annotation Files
 ---
 * cpan modules: ``Statistics::Basic`` ``Math::CDF`` ``Parallel::ForkManager`` ``Text::NSP::Measures::2D::Fisher::right``
