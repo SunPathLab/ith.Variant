@@ -22,6 +22,11 @@ Make sure you've conda or minionda pre installed and run the following commands 
 git clone https://github.com/SunPathLab/ith.Variant.git && cd ith.Variant
 sh install_conda_env.sh
 ```
+Once installed, active the `ith.variant` conda env using.
+
+```shell
+conda activate ith.variant
+```
 
 Dependencies and Annotation Files
 ---

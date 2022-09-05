@@ -1,10 +1,10 @@
 #####################################################
-#     Conda env packages needed for ith.Variant     #
+#         Conda environment for ith.Variant         #
 #####################################################
 
 
-##Perl packages
-#perl >=5.16.3
+##Perl packages #perl >=5.16.3
+
 perl-parallel-forkmanager ==2.02
 perl-params-util ==1.07
 perl-scalar-list-utils ==1.61
@@ -12,8 +12,7 @@ perl-math-cdf ==0.1
 perl-text-nsp ==1.31
 perl-statistics-basic ==1.6611
 
-## R packages
-#r-base >=4.0
+## R/Bioconductor packages #r-base >=4.0
 
 r-biocmanager ==1.30.10
 bioconductor-hmmcopy ==1.32.0
@@ -32,7 +31,7 @@ bwa ==0.7.12
 #SAMtools
 samtools ==1.15
 
-#VCFtools (0.1.16)
+#VCFtools
 vcftools ==0.1.16
 
 #Picard
