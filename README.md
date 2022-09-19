@@ -67,6 +67,26 @@ ith.Variant provides example scripts for running the pipeline in the Slurm job q
 Pre-compiled annotation files (hg38)
 
 
+Using Docker image 
+---
+
+In order to run the containerized version of ith.Variant - first pull the [docker image](https://hub.docker.com/r/asntech/ith.variant):
+
+```shell
+## Docker
+docker pull asntech/ith.variant:latest
+
+## Singularity
+singularity pull --name ith.variant.sim docker://asntech/ith.variant:latest
+
+```
+
+Run the pipeline using **Singularity**
+
+```shell
+singularity run ith.variant.sim DTrace.pl --help
+```
+
 
 Contact Author
 ---
