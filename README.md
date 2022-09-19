@@ -17,20 +17,28 @@ Tumor Multi Region Sequencing (MRS) is becoming a valuable resource for inspecti
 Dependencies and Annotation Files
 ---
 * cpan modules: ``Statistics::Basic`` ``Math::CDF`` ``Parallel::ForkManager`` ``Text::NSP::Measures::2D::Fisher::right``
-* R libs: ``TitanCNA`` ``HMMcopy`` ``caTools`` ``KernSmooth`` ``RColorBrewer`` ``doMC``
-* More details in ``confs/config.tsv`` file.
+* R libs: ``TitanCNA`` (included in folder `pkgs/`) ``HMMcopy`` ``caTools`` ``KernSmooth`` ``RColorBrewer`` ``doMC``
+* gcc (5.4.0 tested)
+* boost (1.54.0 tested)
+* zlib (1.2.11 tested)
+* Necessary annotation files are written in ``confs/config.tsv`` file.
 
 
 Installation
 ---
 
-Installed Bamtools (https://github.com/pezmaster31/bamtools). Also make sure you have zlib and boost installed.
+Installed Bamtools (https://github.com/pezmaster31/bamtools). Also make sure you have `zlib` (version 1.2.11 tested) and `boost` (version 1.54.0 tested) installed. 
 
 run make in following way to install
 
-        $ make BAMTOOLS_ROOT=/bamtools_directory/ ZLIB_ROOT=/zlib_directory/ BOOST_ROOT=/boost_directory/
+```ruby
+make BAMTOOLS_ROOT=/bamtools_directory/ ZLIB_ROOT=/zlib_directory/ BOOST_ROOT=/boost_directory/
+```
 
-The binaries will be built at bin/. ``xxx_directory`` is where lib/ and include/ sub-directories of xxx (bamtools, zlib and boost) are located.
+The binaries will be built at `bin/`. `xxx_directory` is where lib/ and include/ sub-directories of xxx (bamtools, zlib and boost) are located.
+
+
+
 
 
 Usage
