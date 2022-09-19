@@ -105,4 +105,19 @@ COPY ./pkgs/TitanCNA_1.26.0.tar.gz /opt/
 RUN R -e 'install.packages("/opt/TitanCNA_1.26.0.tar.gz")'
 RUN rm /opt/TitanCNA_1.26.0.tar.gz
 
+RUN apt-get install unzip -y
+# install mutect v1.1.5
+RUN mkdir -p /opt/muTect/ && cd /opt/muTect/ \
+	&& wget --quiet https://github.com/broadinstitute/mutect/releases/download/1.1.5/muTect-1.1.5-bin.zip \
+	&& unzip muTect-1.1.5-bin.zip \
+	&& rm muTect-1.1.5-bin.zip
+
+ENV muTectBin=/opt/muTect/muTect-1.1.5.jar
+
+# install picard v2.23.4
+RUN mkdir -p /opt/picard/ && cd /opt/picard/ \
+	&& wget --quiet https://github.com/broadinstitute/picard/releases/download/2.23.4/picard.jar
+
+ENV MarkDuplicatesBin /opt/picard/picard.jar
+
 ENV PATH=/opt:/opt/ith.Variant/bin:${PATH}
