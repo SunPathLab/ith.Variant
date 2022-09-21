@@ -78,21 +78,26 @@ Pre-compiled annotation files (hg38)
 Using Docker image 
 ---
 
-In order to run the containerized version of ith.Variant - first pull the [docker image](https://hub.docker.com/r/asntech/ith.variant):
+To provide an alternative way to install and run `ith.Variant`, we have precomplied a docker image of the current version (1.0). In order to run the containerized version of `ith.Variant` - first pull the [docker image](https://hub.docker.com/r/asntech/ith.variant):
 
-```shell
+```ruby
 ## Docker
 docker pull asntech/ith.variant:latest
 
 ## Singularity
 singularity pull --name ith.variant.sim docker://asntech/ith.variant:latest
-
+## The following may be needed if the tmp folder is not large enough, and users want to pull the image to a specified directory
+export SINGULARITY_TMPDIR=DIR_NAME_FOR_TMP_FILES
+singularity pull --disable-cache --name ith.variant.sim --dir DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE docker://asntech/ith.variant:latest
 ```
+
 
 Run the pipeline using **Singularity**
 
 ```shell
 singularity run ith.variant.sim DTrace.pl --help
+## or
+singularity run --cleanenv DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE/ith.variant.sim DTrace.pl -h
 ```
 
 
