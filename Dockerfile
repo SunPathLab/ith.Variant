@@ -20,7 +20,10 @@ RUN apt-get update \
         cmake \
         gcc \
         g++ \
-        zlib1g-dev
+        zlib1g-dev \
+        unzip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the locale
 RUN locale-gen en_US.UTF-8  
@@ -32,12 +35,12 @@ WORKDIR /opt/
 
 # install zlib
 RUN cd /opt/ && \
-	wget http://www.zlib.net/fossils/zlib-${ZLIB_VERSION}.tar.gz && \
-	tar -xzf zlib-${ZLIB_VERSION}.tar.gz && \
-	mv zlib-${ZLIB_VERSION} zlib && cd zlib && \
-	./configure --prefix=/opt/zlib && \
-	make install && \
-	cd /opt/ && rm -rf zlib-${ZLIB_VERSION}*
+	wget http://www.zlib.net/fossils/zlib-${ZLIB_VERSION}.tar.gz \
+	&& tar -xzf zlib-${ZLIB_VERSION}.tar.gz \
+	&& cd zlib-${ZLIB_VERSION} \
+	&& ./configure --prefix=/opt/zlib \
+	&& make install \
+	&& rm -rf /opt/zlib-${ZLIB_VERSION}*
 
 ENV PKG_CONFIG_PATH /opt/zlib/lib/pkgconfig
 ENV LD_LIBRARY_PATH /opt/zlib/lib:${LD_LIBRARY_PATH}
@@ -48,12 +51,13 @@ RUN cd /opt/ && \
 	-O bamtools-${BAMTOOLS_VERSION}.tar.gz && \
 	tar -xzf bamtools-${BAMTOOLS_VERSION}.tar.gz && \
 	rm bamtools-${BAMTOOLS_VERSION}.tar.gz \
-	&& mv bamtools-* bamtools && cd bamtools \
+	&& cd bamtools-* \
 	&& mkdir build \
 	&& cd build \
 	&& cmake -DCMAKE_INSTALL_PREFIX=/opt/bamtools/ .. \
 	&& make \
-	&& make install
+	&& make install \
+	&& cd /opt/ && rm -rf bamtools-*
 
 # ith.Variant look for api in this dir
 RUN cp /opt/bamtools/include/bamtools/* /opt/bamtools/include/ -r
@@ -102,10 +106,9 @@ RUN ln -sf /opt/conda/bin/perl /usr/bin/perl
 
 # install TitanCNA modified version
 COPY ./pkgs/TitanCNA_1.26.0.tar.gz /opt/
-RUN R -e 'install.packages("/opt/TitanCNA_1.26.0.tar.gz")'
-RUN rm /opt/TitanCNA_1.26.0.tar.gz
+RUN R -e 'install.packages("/opt/TitanCNA_1.26.0.tar.gz")' \
+	&& rm -rf /opt/TitanCNA_1.26.0.tar.gz
 
-RUN apt-get install unzip -y
 # install mutect v1.1.5
 RUN mkdir -p /opt/muTect/ && cd /opt/muTect/ \
 	&& wget --quiet https://github.com/broadinstitute/mutect/releases/download/1.1.5/muTect-1.1.5-bin.zip \
