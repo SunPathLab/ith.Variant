@@ -53,8 +53,6 @@ The binaries will be built at `bin/`. `xxx_directory` is where lib/ and include/
 
 
 
-
-
 Usage
 ---
 
@@ -92,13 +90,14 @@ singularity pull --disable-cache --name ith.variant.sim --dir DEFINE_YOUR_DIRNAM
 ```
 
 
-Run the pipeline using **Singularity**
+Run scripts using **Singularity**
 
 ```ruby
 singularity run ith.variant.sim DTrace.pl --help
 ## or
 singularity run --cleanenv DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE/ith.variant.sim DTrace.pl -h
 ```
+Note that the slurm job-submission scripts (under folder `pipeline/`) need to be modified to reflect the execution from container instead of directly from the local environment. 
 
 
 Contact Author
