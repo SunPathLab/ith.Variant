@@ -11,6 +11,7 @@ perl-scalar-list-utils ==1.61
 perl-math-cdf ==0.1
 perl-text-nsp ==1.31
 perl-statistics-basic ==1.6611
+perl-number-format ==1.75
 
 ## R/Bioconductor packages #r-base >=4.0
 
