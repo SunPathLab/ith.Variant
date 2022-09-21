@@ -100,7 +100,7 @@ struct parameters* interface(struct parameters* param, int argc, char *argv[]){
 
 void usage()
 {
-  fprintf(stdout, "\nnovelSnvFilter.cpp, Copyright (C) 2016 Sun Ruping <ruping@stanford.edu>\n");
+  fprintf(stdout, "\nnovelSnvFilter.cpp, Copyright (C) 2020 Sun Ruping <ruping@umn.edu>\n");
   fprintf(stdout, "\n");
   fprintf(stdout, "Usage: %s options [inputfile] \n\n", program_name);
   fprintf(stdout, "-h --help                print the help message\n");

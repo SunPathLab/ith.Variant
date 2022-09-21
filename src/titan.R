@@ -1,4 +1,4 @@
-#!/srv/gsfs0/projects/curtis/ruping/tools/R/bin/Rscript
+#!Rscript
 
 ## this is for WGS or WXS titan run
 

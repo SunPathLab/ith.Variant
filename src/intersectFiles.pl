@@ -1,5 +1,5 @@
-#  (c) 2014 - Sun Ruping
-#  rs3412@columbia.edu
+#  (c) 2020 - Sun Ruping
+#  ruping@umn.edu
 #
 #  TODO: compare two files of coordinates, with a minimal consumption of memory and running-time
 

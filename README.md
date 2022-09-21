@@ -28,14 +28,18 @@ Once installed, active the `ith.variant` conda env using.
 conda activate ith.variant
 ```
 
-Dependencies and Annotation Files
+Dependencies
 ---
 * cpan modules: ``Statistics::Basic`` ``Math::CDF`` ``Parallel::ForkManager`` ``Text::NSP::Measures::2D::Fisher::right``
 * R libs: ``TitanCNA`` (included in folder `pkgs/`) ``HMMcopy`` ``caTools`` ``KernSmooth`` ``RColorBrewer`` ``doMC``
 * gcc (5.4.0 tested)
 * boost (1.54.0 tested)
 * zlib (1.2.11 tested)
-* Necessary annotation files are written in ``confs/config.tsv`` file.
+
+Annotation Files
+---
+* Necessary annotation files are written in ``confs/config.tsv`` file. These include prebuilt genome indexes for mappers `bwa` and `bowtie`, other region based genome annotations (such as repetitive regions) and known polymorphisms/variants downloaded from dbSNP. 
+* We share the annotation files based on UCSC hg38 (GRCh38.p13, GenBank assembly accession: GCA_000001405.28) [Precompiled UCSC hg38 annotation files](https://drive.google.com/drive/folders/1R99aozlnvXz2vAw40kqe6_KIYUSQIhv9?usp=sharing)
 
 
 Installation
@@ -50,7 +54,6 @@ make BAMTOOLS_ROOT=/bamtools_directory/ ZLIB_ROOT=/zlib_directory/ BOOST_ROOT=/b
 ```
 
 The binaries will be built at `bin/`. `xxx_directory` is where lib/ and include/ sub-directories of xxx (bamtools, zlib and boost) are located.
-
 
 
 Usage
@@ -71,6 +74,11 @@ ith.Variant provides example scripts for running the pipeline in the Slurm job q
 
 
 Pre-compiled annotation files (hg38)
+
+
+Protocol
+---
+A detailed protocol is under review in **Star protocol**.
 
 
 Using Docker image 
