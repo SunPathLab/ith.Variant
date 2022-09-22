@@ -70,7 +70,7 @@ ith.Variant provides example scripts for running the pipeline in the Slurm job q
 
 **Getting help message for submitting jobs in Slurm**
 
-        $ perl ith.Variant/pipeline/submit_slurm.pl -h (or --help)
+        $ perl ith.Variant/pipeline/exome/submit_slurm.pl -h (or --help)
 
 
 Pre-compiled annotation files (hg38)
@@ -100,9 +100,9 @@ Once you're inside the container you can test the pipeline using:
 
 ```bash
 DTrace.pl --help
-
-# OR
-
+```
+OR
+```bash
 perl /opt/ith.Variant/pipeline/exome/submit_slurm.pl -h (or --help)
 ```
 
