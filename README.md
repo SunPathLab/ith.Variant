@@ -88,22 +88,22 @@ To provide an alternative way to run `ith.Variant`, we have precomplied a docker
 
 ```ruby
 ## Docker
-docker pull asntech/ith.variant:latest
+docker pull asntech/ith.variant:v1.0
 
 ## Singularity
-singularity pull --name ith.variant.sim docker://asntech/ith.variant:latest
+singularity pull --name ith.variant.sif docker://asntech/ith.variant:v1.0
 ## The following may be needed if the tmp folder is not large enough, and users would like to pull the container into a specified directory
 export SINGULARITY_TMPDIR=DIR_NAME_FOR_TMP_FILES
-singularity pull --disable-cache --name ith.variant.sim --dir DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE docker://asntech/ith.variant:latest
+singularity pull --disable-cache --name ith.variant.sif --dir DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE docker://asntech/ith.variant:v1.0
 ```
 
 
 Run scripts using **Singularity**
 
 ```ruby
-singularity run ith.variant.sim DTrace.pl --help
+singularity run ith.variant.sif DTrace.pl --help
 ## or
-singularity run --cleanenv DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE/ith.variant.sim DTrace.pl -h
+singularity run --cleanenv DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE/ith.variant.sif DTrace.pl -h
 ```
 Note that the slurm job-submission scripts (under folder `pipeline/`) need to be modified to reflect the execution from container instead of directly from the local environment. 
 
