@@ -87,25 +87,40 @@ Using Docker image
 To provide an alternative way to run `ith.Variant`, we have precomplied a docker container of the current version of the pipeline (1.0). In order to run the containerized version of `ith.Variant` - first pull the [docker image](https://hub.docker.com/r/asntech/ith.variant):
 
 ```ruby
-## Docker
+## Pull the Docker image
 docker pull asntech/ith.variant:v1.0
 
-## Singularity
+## Run it as an interactive container
+docker run -it asntech/ith.variant:v1.0
+
+```
+You can mount a local directory to using `-v` argument, for example: `-v /path/to/local/dir:/path/to/mapped/dir`
+
+Once you're inside the container you can test the pipeline using:
+
+```bash
+DTrace.pl --help
+
+# OR
+
+perl /opt/ith.Variant/pipeline/exome/submit_slurm.pl -h (or --help)
+```
+
+You can also run scripts/pipeline using **Singularity**
+
+```ruby
+## Pull as Singularity image
 singularity pull --name ith.variant.sif docker://asntech/ith.variant:v1.0
 ## The following may be needed if the tmp folder is not large enough, and users would like to pull the container into a specified directory
 export SINGULARITY_TMPDIR=DIR_NAME_FOR_TMP_FILES
 singularity pull --disable-cache --name ith.variant.sif --dir DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE docker://asntech/ith.variant:v1.0
-```
 
-
-Run scripts using **Singularity**
-
-```ruby
+## Run Singularity image
 singularity run ith.variant.sif DTrace.pl --help
 ## or
 singularity run --cleanenv DEFINE_YOUR_DIRNAME_FOR_THE_DOCKER_IMAGE/ith.variant.sif DTrace.pl -h
 ```
-Note that the slurm job-submission scripts (under folder `pipeline/`) need to be modified to reflect the execution from container instead of directly from the local environment. 
+Note that the slurm job-submission scripts (under folder `pipeline/`) need to be modified to reflect the execution from container `/opt/ith.Variant/pipeline/` instead of directly from the local environment.
 
 
 Contact Author
