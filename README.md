@@ -99,7 +99,7 @@ You can mount a local directory to using `-v` argument, for example: `-v /path/t
 Once you're inside the container you can test the pipeline using:
 
 ```bash
-DTrace.pl --help
+perl /opt/ith.Variant/bin/DTrace.pl --help
 ```
 OR
 ```bash
