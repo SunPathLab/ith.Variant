@@ -1,4 +1,4 @@
-#!Rscript
+#!/usr/bin/env Rscript
 
 ## this is for WGS or WXS titan run
 
