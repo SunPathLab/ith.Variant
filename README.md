@@ -16,7 +16,7 @@ Tumor Multi Region Sequencing (MRS) is becoming a valuable resource for inspecti
 
 Install using Conda
 ---
-Make sure you've conda or minionda pre installed and run the following commands to install required packages.
+Make sure you've conda or minionda pre installed and run the following commands to install required packages. If not, please check how to [install miniconda](INSTALL_MINICONDA.md)
 
 ```shell
 git clone https://github.com/SunPathLab/ith.Variant.git && cd ith.Variant
