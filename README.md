@@ -13,6 +13,10 @@ Learn More
 ---
 Tumor Multi Region Sequencing (MRS) is becoming a valuable resource for inspecting intra tumor heterogeneity reflecting growth dynamics in the expansion after tumor initiation. However, such information is buried in subclonal variants which can be at low frequency even if the tumor sample is relatively pure. Detection of these events can be further complicated by the uneven read depth of coverage due to variable exome capture efficiency, sampling or amplification bias in the current WES experiments, and copy number changes in different genomic segments. Here we extract mapping features surrounding each genomic coordinates of interest, leveraging information across MRS, to  strike a balance in the sensitivity and accuracy of the variant detection.
 
+System Requirements
+---
+We recommend using HPC cluster or powerful workstation where multiple threads are available for executing the pipeline. The resource requirements are listed in our **Star protocols** paper. 
+
 
 Install using Conda
 ---
@@ -78,7 +82,7 @@ Pre-compiled annotation files (hg38)
 
 Protocol
 ---
-A detailed protocol is under review in **Star protocol**.
+A detailed protocol is under review in **Star protocols**.
 
 
 Using Docker image 
