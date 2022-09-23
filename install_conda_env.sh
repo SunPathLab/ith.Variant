@@ -8,12 +8,16 @@ echo "$(date): Installing ith.Variant conda env..."
 conda create -n ith.variant --file ${CODE_DIR}/requirements.txt \
   --override-channels -c bioconda -c conda-forge -c defaults -y
 
+
+echo "$(date): Activating conda env ith.variant..."
+
+CONDA_BASE=$(conda info --base)
+source ${CONDA_BASE}/etc/profile.d/conda.sh
 conda activate ith.variant
 
 echo "$(date): Installing modified version of TitanCNA..."
 
 R -e 'install.packages("pkgs/TitanCNA_1.26.0.tar.gz")'
-
 
 ## install mutect v1.1.5
 #echo "$(date): Downloading muTect v1.1.5 jar ${CODE_DIR}/pkgs folder..."
@@ -21,4 +25,4 @@ R -e 'install.packages("pkgs/TitanCNA_1.26.0.tar.gz")'
 #  && unzip muTect-1.1.5-bin.zip \
 #  && rm muTect-1.1.5-bin.zip && cd ..
 
-echo "$(date): Installed ith.Variant Successfully!!"
+echo "$(date):ith.Variant installed successfully!! Please run: conda activate ith.variant"
