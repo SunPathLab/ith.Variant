@@ -76,8 +76,9 @@ ENV BAMTOOLS_ROOT=/opt/bamtools/
 ENV ZLIB_ROOT=/opt/zlib/
 
 # install ith.Variant
-RUN cd /opt/ && \
-	git clone https://github.com/SunPathLab/ith.Variant.git && cd ith.Variant \
+RUN cd /opt/ \
+	&& git clone https://github.com/SunPathLab/ith.Variant.git \
+	&& cd ith.Variant \
 	&& make BAMTOOLS_ROOT=/opt/bamtools/ ZLIB_ROOT=/opt/zlib/ BOOST_ROOT=/opt/boost/
 
 ## Copy local files
@@ -98,8 +99,12 @@ RUN conda update -n base -c defaults conda -y
 
 # install other ith.Variant requirenments
 RUN conda install -c conda-forge mamba --yes \
-	#&& activate ith.variant \
-	&& mamba install --file /opt/requirements.txt -c bioconda -c conda-forge -c defaults -y
+	&& mamba install --file /opt/requirements.txt --override-channels -c bioconda -c conda-forge -c defaults -y
+
+SHELL ["/bin/bash", "-c"]
+RUN CONDA_BASE=$(conda info --base) \
+	&& source ${CONDA_BASE}/etc/profile.d/conda.sh \
+	&& conda activate base 
 
 # symbolic link perl to conda
 RUN ln -sf /opt/conda/bin/perl /usr/bin/perl 
